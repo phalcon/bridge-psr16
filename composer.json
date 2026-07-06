@@ -1,0 +1,59 @@
+{
+    "name": "phalcon/bridge-psr16",
+    "description": "Phalcon Framework bridge classes for PSR-16",
+    "keywords": [
+        "php",
+        "framework",
+        "phalcon",
+        "psr-16"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=8.1 <9.0",
+        "psr/simple-cache": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Phalcon\\Bridge\\Psr16\\": "src/",
+            "Phalcon\\Bridge\\Psr16\\Tests\\Support\\": "tests/support/",
+            "Phalcon\\Bridge\\Psr16\\Tests\\Unit\\": "tests/unit/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.1.99"
+        },
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "pds/skeleton": "^1.0",
+        "phalcon/ide-stubs": "^5.6",
+        "phalcon/phalcon": "^6.0@alpha",
+        "phalcon/talon": "^0.6.0",
+        "phpstan/phpstan": "^2.2",
+        "phpunit/phpunit": "^10.5",
+        "squizlabs/php_codesniffer": "^4.0",
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "suggest": {
+        "phalcon/phalcon": "Provides Phalcon\\Cache via the PHP implementation",
+        "ext-phalcon": "Provides Phalcon\\Cache via the C extension (alternative to phalcon/phalcon)"
+    },
+    "provide": {
+        "psr/simple-cache-implementation": "3.0"
+    },
+    "scripts": {
+        "analyze": "phpstan analyse -c resources/phpstan.neon --memory-limit 1024M",
+        "cs": "phpcs --standard=resources/phpcs.xml",
+        "cs-fix": "phpcbf --standard=resources/phpcs.xml",
+        "cs-fixer": "php-cs-fixer fix --config=resources/php-cs-fixer.php --dry-run --diff",
+        "cs-fixer-fix": "php-cs-fixer fix --config=resources/php-cs-fixer.php",
+        "test": "talon run",
+        "test-unit": "talon run unit",
+        "test-coverage": "talon run unit -- --coverage-clover tests/_output/coverage.xml",
+        "test-coverage-html": "talon run unit -- --coverage-html tests/_output/coverage"
+    }
+}
