@@ -43,4 +43,17 @@ final class CapabilitiesTest extends TestCase
         $this->assertTrue($psr->has('perma'));
         $this->assertSame('value', $psr->get('perma'));
     }
+
+    public function testSetWithNonPositiveTtlDeletesKey(): void
+    {
+        $psr     = new InMemoryPsrCache();
+        $adapter = new Adapter(new SerializerFactory(), $psr);
+
+        $adapter->set('temp', 'value');
+        $this->assertTrue($psr->has('temp'));
+
+        // A TTL of <= 0 means the item is already expired, so it is deleted.
+        $this->assertTrue($adapter->set('temp', 'value', 0));
+        $this->assertFalse($psr->has('temp'));
+    }
 }
