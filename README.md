@@ -116,15 +116,15 @@ every command — Compose reads it automatically.
 
 Run them inside the container, e.g. `docker compose exec app composer cs`:
 
-| Script | Description |
-| --- | --- |
-| `composer cs` | PHP_CodeSniffer (PSR-12) |
-| `composer cs-fix` | Auto-fix coding-standard issues (phpcbf) |
-| `composer cs-fixer` | PHP CS Fixer (dry-run) |
-| `composer cs-fixer-fix` | Apply PHP CS Fixer |
-| `composer analyze` | PHPStan static analysis |
+| Script                                 | Description                                                        |
+|----------------------------------------|--------------------------------------------------------------------|
+| `composer cs`                          | PHP_CodeSniffer (PSR-12)                                           |
+| `composer cs-fix`                      | Auto-fix coding-standard issues (phpcbf)                           |
+| `composer cs-fixer`                    | PHP CS Fixer (dry-run)                                             |
+| `composer cs-fixer-fix`                | Apply PHP CS Fixer                                                 |
+| `composer analyze`                     | PHPStan static analysis                                            |
 | `composer test` / `composer test-unit` | Unit tests via [`phalcon/talon`](https://github.com/phalcon/talon) |
-| `composer test-coverage` | Tests + Clover coverage (`tests/_output/coverage.xml`) |
+| `composer test-coverage`               | Tests + Clover coverage (`tests/_output/coverage.xml`)             |
 
 ## Links
 
