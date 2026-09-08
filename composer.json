@@ -25,14 +25,18 @@
             "php": "8.1.99"
         },
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.95",
         "pds/skeleton": "^1.0",
-        "phalcon/ide-stubs": "^5.6",
+        "phalcon/ide-stubs": "^5.18",
         "phalcon/phalcon": "^6.0@beta",
         "phalcon/talon": "^1.0.0",
+        "phalcon/code-quality": "^1.0",
         "phpstan/phpstan": "^2.2",
         "phpunit/phpunit": "^10.5",
         "squizlabs/php_codesniffer": "^4.0",
