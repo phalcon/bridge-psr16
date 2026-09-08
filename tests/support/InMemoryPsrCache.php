@@ -58,14 +58,14 @@ final class InMemoryPsrCache implements CacheInterface
         return isset($this->data[$key]);
     }
 
-    public function set(string $key, mixed $value, null | int | DateInterval $ttl = null): bool
+    public function set(string $key, mixed $value, DateInterval | int | null $ttl = null): bool
     {
         $this->data[$key] = $value;
 
         return true;
     }
 
-    public function setMultiple(iterable $values, null | int | DateInterval $ttl = null): bool
+    public function setMultiple(iterable $values, DateInterval | int | null $ttl = null): bool
     {
         foreach ($values as $key => $value) {
             $this->set($key, $value);

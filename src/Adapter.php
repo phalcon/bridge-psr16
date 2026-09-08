@@ -57,10 +57,6 @@ class Adapter extends AbstractAdapter implements AdapterInterface
 
     /**
      * PSR-16 cannot enumerate keys, so an empty list is returned.
-     *
-     * @param string $prefix
-     *
-     * @return array
      */
     public function getKeys(string $prefix = ''): array
     {
@@ -74,11 +70,6 @@ class Adapter extends AbstractAdapter implements AdapterInterface
 
     /**
      * PSR-16 has no atomic counters; emulated non-atomically.
-     *
-     * @param string $key
-     * @param int    $value
-     *
-     * @return false|int
      */
     protected function doDecrement(string $key, int $value = 1): false | int
     {

@@ -70,12 +70,12 @@ final class Cache implements CacheInterface
         return $this->guard(fn (): bool => $this->cache->has($key));
     }
 
-    public function set(string $key, mixed $value, null | int | DateInterval $ttl = null): bool
+    public function set(string $key, mixed $value, DateInterval | int | null $ttl = null): bool
     {
         return $this->guard(fn (): bool => $this->cache->set($key, $value, $ttl));
     }
 
-    public function setMultiple(iterable $values, null | int | DateInterval $ttl = null): bool
+    public function setMultiple(iterable $values, DateInterval | int | null $ttl = null): bool
     {
         return $this->guard(fn (): bool => $this->cache->setMultiple($values, $ttl));
     }
